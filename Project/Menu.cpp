@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Menu.h"
+#include "Background.h"
 #include "Windows.h"
 using namespace std;
 
@@ -25,7 +26,8 @@ void Menu::BootSequence()
 	system("pause");
 	system("cls");
 
-	BootLogo();
+	Background draw_background;
+	draw_background.BootLogo();
 
 	cursor_pos.X = (ScreenSize / 3) - 3; cursor_pos.Y = ScreenSize / 6 + 2;
 	SetConsoleCursorPosition(console, cursor_pos);
@@ -41,7 +43,7 @@ void Menu::BootSequence()
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Racer" << endl;
 	Sleep(3000);
-	system("pause");
+	//system("pause");
 
 	MainMenu();
 }
@@ -93,15 +95,19 @@ void Menu::MainMenu()
 void Menu::RunGame()
 {
 	system("cls");
-	cout << "    ______" << endl;
-	cout << " __|      |__" << endl;
-	cout << "|  |      |  |" << endl;
-	cout << "|__|------|__|" << endl;
-	cout << "   |      |" << endl;
-	cout << " __|      |__" << endl;
-	cout << "|  |      |  |" << endl;
-	cout << "|__|      |__|" << endl;
-	cout << "   |______|  " << endl;
+	//cout << "    ______" << endl;
+	//cout << " __|      |__" << endl;
+	//cout << "|  |      |  |" << endl;
+	//cout << "|__|------|__|" << endl;
+	//cout << "   |      |" << endl;
+	//cout << " __|      |__" << endl;
+	//cout << "|  |      |  |" << endl;
+	//cout << "|__|      |__|" << endl;
+	//cout << "   |______|  " << endl;
+
+	Background draw_background;
+	draw_background.GameWindow();
+
 	system("pause");
 	MainMenu();
 }
@@ -144,36 +150,4 @@ void Menu::CustomizationSettings()
 			Sleep(1000);
 		}
 	} while (ChoiceCheck4);
-}
-
-void Menu::BootLogo()
-{
-	unsigned int i = 0;
-	for (i = 0; i < ScreenSize / 2; i++) { cout << "* "; }
-	cout << endl;
-	for (i = 0; i < ScreenSize / 24; i++)
-	{
-		cout << "* * * * * *             * * * * * *             * * * * * *           *" << endl;
-	}
-	for (i = 0; i < ScreenSize / 24; i++)
-	{
-		cout << "*           * * * * * *             * * * * * *             * * * * * *" << endl;
-	}
-	for (i = 0; i < ScreenSize / 2; i++) { cout << "* "; }
-	cout << endl;
-	for (i = 0; i < 3 * ScreenSize / 8; i++)
-	{
-		cout << "*                                                                     *" << endl;
-	}
-	for (i = 0; i < ScreenSize / 2; i++) { cout << "* "; }
-	cout << endl;
-	for (i = 0; i < ScreenSize / 24; i++)
-	{
-		cout << "* * * * * *             * * * * * *             * * * * * *           *" << endl;
-	}
-	for (i = 0; i < ScreenSize / 24; i++)
-	{
-		cout << "*           * * * * * *             * * * * * *             * * * * * *" << endl;
-	}
-	for (i = 0; i < ScreenSize / 2; i++) { cout << "* "; }
 }
