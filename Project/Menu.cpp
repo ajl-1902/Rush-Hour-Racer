@@ -27,21 +27,21 @@ void Menu::BootSequence()
 
 	BootLogo();
 
-	cursor_pos.X = (ScreenSize / 3) - 2; cursor_pos.Y = ScreenSize / 6 + 1;
+	cursor_pos.X = (ScreenSize / 3) - 3; cursor_pos.Y = ScreenSize / 6 + 2;
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Rush" << endl;
 	Sleep(750);
 
-	cursor_pos.X = (ScreenSize / 2) - 2; cursor_pos.Y = ScreenSize / 4 + 1;
+	cursor_pos.X = (ScreenSize / 2) - 3; cursor_pos.Y = ScreenSize / 4 + 2;
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Hour" << endl;
 	Sleep(750);
 
-	cursor_pos.X = (2 * ScreenSize / 3) - 2; cursor_pos.Y = 2 * ScreenSize / 6 + 1;
+	cursor_pos.X = (2 * ScreenSize / 3) - 3; cursor_pos.Y = 2 * ScreenSize / 6 + 2;
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Racer" << endl;
 	Sleep(3000);
-	//system("pause");
+	system("pause");
 
 	MainMenu();
 }
@@ -153,27 +153,27 @@ void Menu::BootLogo()
 	cout << endl;
 	for (i = 0; i < ScreenSize / 24; i++)
 	{
-		cout << "* * * * * * * *                 * * * * * * * *                 * * * * * * * *               *" << endl;
+		cout << "* * * * * *             * * * * * *             * * * * * *           *" << endl;
 	}
 	for (i = 0; i < ScreenSize / 24; i++)
 	{
-		cout << "*               * * * * * * * *                 * * * * * * * *                 * * * * * * * *" << endl;
+		cout << "*           * * * * * *             * * * * * *             * * * * * *" << endl;
 	}
 	for (i = 0; i < ScreenSize / 2; i++) { cout << "* "; }
 	cout << endl;
 	for (i = 0; i < 3 * ScreenSize / 8; i++)
 	{
-		cout << "*                                                                                             *" << endl;
+		cout << "*                                                                     *" << endl;
 	}
 	for (i = 0; i < ScreenSize / 2; i++) { cout << "* "; }
 	cout << endl;
 	for (i = 0; i < ScreenSize / 24; i++)
 	{
-		cout << "* * * * * * * *                 * * * * * * * *                 * * * * * * * *               *" << endl;
+		cout << "* * * * * *             * * * * * *             * * * * * *           *" << endl;
 	}
 	for (i = 0; i < ScreenSize / 24; i++)
 	{
-		cout << "*               * * * * * * * *                 * * * * * * * *                 * * * * * * * *" << endl;
+		cout << "*           * * * * * *             * * * * * *             * * * * * *" << endl;
 	}
 	for (i = 0; i < ScreenSize / 2; i++) { cout << "* "; }
 }

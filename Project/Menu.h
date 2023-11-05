@@ -4,7 +4,7 @@ using namespace std;
 class Menu
 {
 private:
-	static const int ScreenSize = 96;
+	static const int ScreenSize = 72;
 	int choice;
 	bool exit;
 	int difficulty;
