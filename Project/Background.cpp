@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Background.h"
-#include "Menu.h"
-#include "Windows.h"
 using namespace std;
 
 void Background::BootLogo()

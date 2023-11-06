@@ -1,4 +1,6 @@
 #pragma once
+#include "Background.h"
+#include "Windows.h"
 using namespace std;
 
 class Menu

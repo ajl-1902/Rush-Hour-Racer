@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Menu.h"
-#include "Background.h"
-#include "Windows.h"
 using namespace std;
 
 #define ChoiceCheck5 choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5
@@ -29,17 +27,17 @@ void Menu::BootSequence()
 	Background draw_background;
 	draw_background.BootLogo();
 
-	cursor_pos.X = (ScreenSize / 3) - 3; cursor_pos.Y = ScreenSize / 6 + 2;
+	cursor_pos = { (ScreenSize / 3) - 3, ScreenSize / 6 + 2 };
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Rush" << endl;
 	Sleep(750);
 
-	cursor_pos.X = (ScreenSize / 2) - 3; cursor_pos.Y = ScreenSize / 4 + 2;
+	cursor_pos = { (ScreenSize / 2) - 3, ScreenSize / 4 + 2 };
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Hour" << endl;
 	Sleep(750);
 
-	cursor_pos.X = (2 * ScreenSize / 3) - 3; cursor_pos.Y = 2 * ScreenSize / 6 + 2;
+	cursor_pos = { (2 * ScreenSize / 3) - 3, 2 * ScreenSize / 6 + 2 };
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Racer" << endl;
 	Sleep(3000);
