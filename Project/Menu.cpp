@@ -93,18 +93,25 @@ void Menu::MainMenu()
 void Menu::RunGame()
 {
 	system("cls");
-	//cout << "    ______" << endl;
-	//cout << " __|      |__" << endl;
-	//cout << "|  |      |  |" << endl;
-	//cout << "|__|------|__|" << endl;
-	//cout << "   |      |" << endl;
-	//cout << " __|      |__" << endl;
-	//cout << "|  |      |  |" << endl;
-	//cout << "|__|      |__|" << endl;
-	//cout << "   |______|  " << endl;
+	
+	//Player player;
+	//player.setShape(this->model);
+	//player.setPos(ScreenSize / 2 - 7, 2 * ScreenSize / 3);
 
 	Background draw_background;
 	draw_background.GameWindow();
+
+	//cursor_pos = { (ScreenSize / 2) - 8, ScreenSize / 3 };
+	//SetConsoleCursorPosition(console, cursor_pos);
+	//cout << "    _______" << endl;
+	//cout << " __|       |__" << endl;
+	//cout << "|  |       |  |" << endl;
+	//cout << "|__|-------|__|" << endl;
+	//cout << "   |       |" << endl;
+	//cout << " __|       |__" << endl;
+	//cout << "|  |       |  |" << endl;
+	//cout << "|__|       |__|" << endl;
+	//cout << "   |_______|  " << endl;
 
 	system("pause");
 	MainMenu();
@@ -117,7 +124,7 @@ void Menu::DiffSettings()
 		cout << "Difficulty setting controls the overall frequency and density of traffic. Select an option below:" << endl;
 		cout << "1. Easy" << endl << "2. Normal" << endl << "3. Hard" << endl << "4. Insane" << endl;
 
-		cin >> this->choice;
+		cin >> choice;
 		this->difficulty = choice;
 
 		if (ChoiceCheck4)
@@ -138,7 +145,7 @@ void Menu::CustomizationSettings()
 		cout << "Customize the model for the player car. Note that car model is purely cosmetic and does not affect performance" << endl;
 		cout << "1. Car" << endl << "2. Jeep" << endl << "3. Formula" << endl << "4. Monster Truck" << endl;
 
-		cin >> this->choice;
+		cin >> choice;
 		this->model = choice;
 
 		if (ChoiceCheck4)

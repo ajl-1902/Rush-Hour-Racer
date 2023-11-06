@@ -39,16 +39,16 @@ void Background::GameWindow()
 {
 	Menu window;
 	unsigned int j = 0;
-	for (j = 0; j < window.ScreenSize / 18; j++)
+	for (j = 0; j < window.ScreenSize / 18 - 2; j++)
 	{
 		for (int k = 0; k < window.ScreenSize / 2; k++) { cout << "* "; }
 		cout << "\n";
 	}
-	for (j = 0; j < 4 * window.ScreenSize / 9 + 3; j++)
+	for (j = 0; j < 4 * window.ScreenSize / 9 + 7; j++)
 	{
 		cout << "*                       |                     |                       *\n";
 	}
-	for (j = 0; j < window.ScreenSize / 18; j++)
+	for (j = 0; j < window.ScreenSize / 18 - 2; j++)
 	{
 		for (int k = 0; k < window.ScreenSize / 2; k++) { cout << "* "; }
 		cout << "\n";

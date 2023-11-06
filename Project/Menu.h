@@ -1,5 +1,6 @@
 #pragma once
 #include "Background.h"
+#include "Player.h"
 #include "Windows.h"
 using namespace std;
 

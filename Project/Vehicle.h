@@ -5,6 +5,8 @@ using namespace std;
 class Vehicle
 {
 private:
+	int posX, posY, vel;
+	vector<int> pos;
 
 public:
 	Vehicle();
@@ -12,7 +14,10 @@ public:
 
 	void setPos(int, int);
 	vector<int> getPos();
+	void setVel(int);
+	int getVel();
 
-	virtual void setShape() = 0;
-	virtual char getShape() = 0;
+	virtual void setShape(int) = 0;
+	virtual char getShape(int,int) = 0;
+	virtual void setLocation() = 0;
 };
