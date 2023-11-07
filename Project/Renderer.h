@@ -15,6 +15,10 @@ private:
 	vector<Borders> borders;
 	Player player;
 	int model;
+	int curr_lane;
+	unsigned int frame_index;
+	double dt;
+	//vector<int> lane_pos;
 
 public:
 	Renderer(int, int);
@@ -22,4 +26,7 @@ public:
 	void GenerateFrame();
 	void DisplayFrame();
 	void UpdateFrame();
+	void NextFrame();
+	void LaneSwitch();
+	vector<int> getLanePos(int);
 };

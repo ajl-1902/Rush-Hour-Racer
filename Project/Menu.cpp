@@ -95,6 +95,14 @@ void Menu::RunGame()
 	Renderer game(difficulty, model);
 	game.DisplayFrame();
 
+	while (true)
+	{
+		game.LaneSwitch();
+		game.NextFrame();
+		Sleep(100);
+		game.UpdateFrame();
+	}
+
 	system("pause");
 	MainMenu();
 }
