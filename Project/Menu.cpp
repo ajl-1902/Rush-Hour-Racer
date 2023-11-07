@@ -125,7 +125,7 @@ void Menu::CustomizationSettings()
 	system("cls");
 	do {
 		cout << "Customize the model for the player car. Note that car model is purely cosmetic and does not affect performance" << endl;
-		cout << "1. Car" << endl << "2. Jeep" << endl << "3. Formula" << endl << "4. Monster Truck" << endl;
+		cout << "1. Car" << endl << "2. Monster Truck" << endl << "3. Formula" << endl << "4. Tank" << endl;
 
 		cin >> choice;
 		this->model = choice;
