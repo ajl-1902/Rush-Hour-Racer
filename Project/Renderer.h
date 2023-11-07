@@ -1,7 +1,6 @@
 #pragma once
 #include "Background.h"
 #include "Player.h"
-//#include "Vehicle.h"
 #include "Menu.h"
 #include "Windows.h"
 #include "Borders.h"
@@ -14,7 +13,7 @@ private:
 	char curr_frame[ScreenSize][ScreenSize];
 	char prev_frame[ScreenSize][ScreenSize];
 	Player player;
-	Borders borders;
+	vector<Borders> borders;
 
 public:
 	Renderer(int);

@@ -4,7 +4,7 @@ using namespace std;
 
 Renderer::Renderer(int m)
 {
-	for (int i = 0; i < ScreenSize; i++)
+	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 		for (int j = 0; j < ScreenSize; j++)
 		{
 			curr_frame[i][j] = ' ';
@@ -12,24 +12,38 @@ Renderer::Renderer(int m)
 		}
 
 	//player.setPos(ScreenSize / 2 - 8, ScreenSize / 3);
+	
+	Borders left('*', 0, 0);
+	Borders centerL('|', 0, ScreenSize / 3);
+	Borders centerR('|', 0, 2 * ScreenSize / 3 - 2);
+	Borders right('*', 0, ScreenSize - 1);
+	borders = { left,centerL,centerR,right };
+	//borders.push_back(left);
+	//borders.push_back(centerL);
+	//borders.push_back(centerR);
+	//borders.push_back(right);
 	//borders.setShape(m);
 }
 
 void Renderer::GenerateFrame()
 {
 	// clears array for next frame
-	for (int i = 0; i < ScreenSize; i++)
+	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 		for (int j = 0; j < ScreenSize; j++)
 			curr_frame[i][j] = ' ';
 
 	// loop which fills in the frame with relevant frame info
-	for (int i = 0; i < ScreenSize; i++)
-		for (int j = 0; j < ScreenSize; j++) {
+	for (int i = 0; i < 5 * ScreenSize / 8; i++)
+		for (int j = 0; j < ScreenSize; j++)
+		{
 			// filling in the walls on the outside
-			curr_frame[i][j] = borders.getShapeDelta(i, j, curr_frame[i][j]);
+			curr_frame[i][j] = borders[0].getShapeDelta(i, j, curr_frame[i][j]);
+			curr_frame[i][j] = borders[1].getShapeDelta(i, j, curr_frame[i][j]);
+			curr_frame[i][j] = borders[2].getShapeDelta(i, j, curr_frame[i][j]);
+			curr_frame[i][j] = borders[3].getShapeDelta(i, j, curr_frame[i][j]);
 
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
-			curr_frame[i][j] = player.getShapeDelta(i, j, curr_frame[i][j]);
+			//curr_frame[i][j] = player.getShapeDelta(i, j, curr_frame[i][j]);
 		}
 }
 
@@ -55,7 +69,7 @@ void Renderer::DisplayFrame() {
 	this->GenerateFrame();
 
 	// outputs the inital frame to console
-	for (int i = 0; i < ScreenSize; i++) {
+	for (int i = 0; i < 5 * ScreenSize / 8; i++) {
 		for (int j = 0; j < ScreenSize; j++) {
 			cout << curr_frame[i][j];
 		}
@@ -63,7 +77,7 @@ void Renderer::DisplayFrame() {
 	}
 
 	// sets current frame data to previous frame data
-	for (int i = 0; i < ScreenSize; i++)
+	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 		for (int j = 0; j < ScreenSize; j++)
 			prev_frame[i][j] = curr_frame[i][j];
 
