@@ -13,9 +13,12 @@ private:
 	char curr_frame[ScreenSize][ScreenSize];
 	char prev_frame[ScreenSize][ScreenSize];
 	vector<Borders> borders;
+	Player player;
+	int model;
+	//int difficulty;
 
 public:
-	Renderer(int);
+	Renderer(int, int);
 	//~Renderer();
 
 	void GenerateFrame();

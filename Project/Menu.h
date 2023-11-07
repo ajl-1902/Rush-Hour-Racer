@@ -22,4 +22,6 @@ public:
 	void RunGame();
 	void DiffSettings();
 	void CustomizationSettings();
+	int getModel();
+	void setModel(int);
 };

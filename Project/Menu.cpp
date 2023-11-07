@@ -101,7 +101,7 @@ void Menu::RunGame()
 	//Background draw_background;
 	//draw_background.GameWindow();
 
-	Renderer game(difficulty);
+	Renderer game(difficulty, model);
 	game.DisplayFrame();
 
 	//cursor_pos = { (ScreenSize / 2) - 8, ScreenSize / 3 };
@@ -158,4 +158,14 @@ void Menu::CustomizationSettings()
 			Sleep(1000);
 		}
 	} while (ChoiceCheck4);
+}
+
+int Menu::getModel()
+{
+	return this->model;
+}
+
+void Menu::setModel(int mdl)
+{
+	this->model = mdl;
 }

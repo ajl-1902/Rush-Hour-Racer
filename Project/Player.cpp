@@ -2,6 +2,12 @@
 #include "Player.h"
 using namespace std;
 
+Player::Player()
+{
+	this->setShape(1);
+	this->setLocation();
+}
+
 Player::Player(int mdl)
 {
 	this->setShape(mdl);
@@ -23,11 +29,11 @@ void Player::setShape(int mdl)
 	switch (mdl)
 	{
 	case 1:
-
+		break;
 	case 2:
-
+		break;
 	case 3:
-
+		break;
 	case 4:
 																			    cell[0][4] = '_'; cell[0][5] = '_';	cell[0][6] = '_'; cell[0][7] = '_';	cell[0][8] = '_'; cell[0][9] = '_';	cell[0][10] = '_';
 						  cell[1][1] = '_';	cell[1][2] = '_'; cell[1][3] = '|';																																   cell[1][11] = '|'; cell[1][12] = '_'; cell[1][13] = '_';
@@ -48,6 +54,7 @@ void Player::setShape(int mdl)
 		   |__|       |__|
 		      |_______|  
 		*/
+		break;
 	}
 }
 
@@ -85,4 +92,10 @@ bool Player::isHere(int X, int Y)
 		}
 	}
 	return false;
+}
+
+void Player::editModel(int mdl)
+{
+	this->setShape(mdl);
+	this->setLocation();
 }

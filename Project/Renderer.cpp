@@ -2,9 +2,7 @@
 #include "Renderer.h"
 using namespace std;
 
-Player player(4);
-
-Renderer::Renderer(int m)
+Renderer::Renderer(int diff, int mdl)
 {
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 		for (int j = 0; j < ScreenSize; j++)
@@ -14,6 +12,8 @@ Renderer::Renderer(int m)
 		}
 
 	//player.setPos(ScreenSize / 2 - 8, ScreenSize / 3);
+	player.editModel(mdl);
+	this->model = mdl;
 	player.setPos(36, 28);
 	
 	Borders left('*', 0, 0);
@@ -30,6 +30,7 @@ Renderer::Renderer(int m)
 
 void Renderer::GenerateFrame()
 {
+	player.editModel(model);
 	// clears array for next frame
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 		for (int j = 0; j < ScreenSize; j++)
