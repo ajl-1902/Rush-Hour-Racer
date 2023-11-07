@@ -16,7 +16,6 @@ private:
 
 public:
 	Player();
-	~Player();
 
 	void setShape(int);
 	char getShape(int, int);

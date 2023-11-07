@@ -16,7 +16,6 @@ private:
 public:
 	static const int ScreenSize = 72;
 	Menu();
-	~Menu();
 	void BootSequence();
 	void MainMenu();
 	void RunGame();

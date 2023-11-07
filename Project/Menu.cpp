@@ -16,8 +16,6 @@ Menu::Menu()
 	model = 1;
 }
 
-Menu::~Menu() {}
-
 void Menu::BootSequence()
 {
 	cout << "Please maximize the window before continuing for the best experience" << endl << endl;
@@ -93,28 +91,9 @@ void Menu::MainMenu()
 void Menu::RunGame()
 {
 	system("cls");
-	
-	//Player player;
-	//player.setShape(this->model);
-	//player.setPos(ScreenSize / 2 - 7, 2 * ScreenSize / 3);
-
-	//Background draw_background;
-	//draw_background.GameWindow();
 
 	Renderer game(difficulty, model);
 	game.DisplayFrame();
-
-	//cursor_pos = { (ScreenSize / 2) - 8, ScreenSize / 3 };
-	//SetConsoleCursorPosition(console, cursor_pos);
-	//cout << "    _______" << endl;
-	//cout << " __|       |__" << endl;
-	//cout << "|  |       |  |" << endl;
-	//cout << "|__|-------|__|" << endl;
-	//cout << "   |       |" << endl;
-	//cout << " __|       |__" << endl;
-	//cout << "|  |       |  |" << endl;
-	//cout << "|__|       |__|" << endl;
-	//cout << "   |_______|  " << endl;
 
 	system("pause");
 	MainMenu();

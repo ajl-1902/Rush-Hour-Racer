@@ -10,7 +10,6 @@ private:
 
 public:
 	Vehicle();
-	~Vehicle();
 
 	void setPos(int, int);
 	vector<int> getPos();

@@ -18,7 +18,6 @@ private:
 
 public:
 	Renderer(int, int);
-	//~Renderer();
 
 	void GenerateFrame();
 	void DisplayFrame();

@@ -6,8 +6,6 @@ Vehicle::Vehicle()
 	posX = 0; posY = 0; vel = 0;
 }
 
-Vehicle::~Vehicle() {}
-
 void Vehicle::setPos(int X, int Y)
 {
 	posX = X; posY = Y;

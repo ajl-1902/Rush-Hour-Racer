@@ -12,7 +12,6 @@ private:
 public:
 	Borders();
 	Borders(char, int, int);
-	//~Borders();
 
 	void setShape(int);
 	char getShape(int, int);

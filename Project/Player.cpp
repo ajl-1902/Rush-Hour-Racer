@@ -9,8 +9,6 @@ Player::Player()
 	this->setLocation();
 }
 
-Player::~Player() {}
-
 void Player::setShape(int mdl)
 {
 	for (int i = 0; i < player_sizeX; i++)
