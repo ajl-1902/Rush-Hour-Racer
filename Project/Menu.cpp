@@ -27,17 +27,17 @@ void Menu::BootSequence()
 	Background draw_background;
 	draw_background.BootLogo();
 
-	cursor_pos = { (ScreenSize / 3) - 3, ScreenSize / 6 + 2 };
+	cursor_pos = { (ScreenSize / 3) - 2, ScreenSize / 6 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Rush" << endl;
 	Sleep(750);
 
-	cursor_pos = { (ScreenSize / 2) - 3, ScreenSize / 4 + 2 };
+	cursor_pos = { (ScreenSize / 2) - 2, ScreenSize / 4 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Hour" << endl;
 	Sleep(750);
 
-	cursor_pos = { (2 * ScreenSize / 3) - 3, 2 * ScreenSize / 6 + 2 };
+	cursor_pos = { (2 * ScreenSize / 3) - 2, 2 * ScreenSize / 6 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Racer" << endl;
 	Sleep(3000);
@@ -158,14 +158,4 @@ void Menu::CustomizationSettings()
 			Sleep(1000);
 		}
 	} while (ChoiceCheck4);
-}
-
-int Menu::getModel()
-{
-	return this->model;
-}
-
-void Menu::setModel(int mdl)
-{
-	this->model = mdl;
 }

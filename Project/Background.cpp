@@ -18,7 +18,7 @@ void Background::BootLogo()
 	}
 	for (i = 0; i < window.ScreenSize / 2; i++) { cout << "* "; }
 	cout << "\n";
-	for (i = 0; i < 3 * window.ScreenSize / 8; i++)
+	for (i = 0; i < 3 * window.ScreenSize / 8 + 2; i++)
 	{
 		cout << "*                                                                     *\n";
 	}

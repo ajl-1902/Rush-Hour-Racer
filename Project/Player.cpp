@@ -4,13 +4,8 @@ using namespace std;
 
 Player::Player()
 {
-	this->setShape(1);
-	this->setLocation();
-}
-
-Player::Player(int mdl)
-{
-	this->setShape(mdl);
+	model = 1;
+	this->setShape(model);
 	this->setLocation();
 }
 
@@ -29,6 +24,26 @@ void Player::setShape(int mdl)
 	switch (mdl)
 	{
 	case 1:
+																				cell[0][4] = '_'; cell[0][5] = '_';	cell[0][6] = '_'; cell[0][7] = '_';	cell[0][8] = '_'; cell[0][9] = '_';	cell[0][10] = '_';
+											cell[1][2] = '_'; cell[1][3] = '|';																																   cell[1][11] = '|'; cell[1][12] = '_';
+						  cell[2][1] = '|';	cell[2][2] = '_'; cell[2][3] = '|';																																   cell[2][11] = '|'; cell[2][12] = '_'; cell[2][13] = '|';
+														      cell[3][3] = '|';	cell[3][4] = '-'; cell[3][5] = '-';	cell[3][6] = '-'; cell[3][7] = '-';	cell[3][8] = '-'; cell[3][9] = '-';	cell[3][10] = '-'; cell[3][11] = '|';
+															  cell[4][3] = '|';																																   cell[4][11] = '|';
+															  cell[5][3] = '|';																																   cell[5][11] = '|';
+											cell[6][2] = '_'; cell[6][3] = '|';	cell[6][4] = '-'; cell[6][5] = '-';	cell[6][6] = '-'; cell[6][7] = '-';	cell[6][8] = '-'; cell[6][9] = '-';	cell[6][10] = '-'; cell[6][11] = '|'; cell[6][12] = '_';
+						  cell[7][1] = '|'; cell[7][2] = '_'; cell[7][3] = '|';																																   cell[7][11] = '|'; cell[7][12] = '_'; cell[7][13] = '|';
+															  cell[8][3] = '|'; cell[8][4] = '_'; cell[8][5] = '_'; cell[8][6] = '_'; cell[8][7] = '_';	cell[8][8] = '_'; cell[8][9] = '_';	cell[8][10] = '_'; cell[8][11] = '|';
+
+		/*     _______
+			 _|       |_
+		    |_|       |_|
+              |-------|
+			  |       |
+			  |       |
+			 _|-------|_
+			|_|       |_|
+			  |_______|  
+		*/
 		break;
 	case 2:
 		break;

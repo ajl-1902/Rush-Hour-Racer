@@ -15,7 +15,6 @@ private:
 	vector<Borders> borders;
 	Player player;
 	int model;
-	//int difficulty;
 
 public:
 	Renderer(int, int);

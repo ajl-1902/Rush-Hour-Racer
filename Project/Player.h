@@ -16,7 +16,6 @@ private:
 
 public:
 	Player();
-	Player(int);
 	~Player();
 
 	void setShape(int);
