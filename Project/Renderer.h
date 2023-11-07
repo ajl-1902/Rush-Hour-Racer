@@ -12,7 +12,6 @@ private:
 	static const int ScreenSize = 72;
 	char curr_frame[ScreenSize][ScreenSize];
 	char prev_frame[ScreenSize][ScreenSize];
-	Player player;
 	vector<Borders> borders;
 
 public:

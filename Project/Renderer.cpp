@@ -2,6 +2,8 @@
 #include "Renderer.h"
 using namespace std;
 
+Player player(4);
+
 Renderer::Renderer(int m)
 {
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
@@ -12,6 +14,7 @@ Renderer::Renderer(int m)
 		}
 
 	//player.setPos(ScreenSize / 2 - 8, ScreenSize / 3);
+	player.setPos(36, 28);
 	
 	Borders left('*', 0, 0);
 	Borders centerL('|', 0, ScreenSize / 3);
@@ -43,7 +46,7 @@ void Renderer::GenerateFrame()
 			curr_frame[i][j] = borders[3].getShapeDelta(i, j, curr_frame[i][j]);
 
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
-			//curr_frame[i][j] = player.getShapeDelta(i, j, curr_frame[i][j]);
+			curr_frame[i][j] = player.getShapeDelta(i, j, curr_frame[i][j]);
 		}
 }
 

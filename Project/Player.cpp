@@ -2,7 +2,12 @@
 #include "Player.h"
 using namespace std;
 
-Player::Player() {}
+Player::Player(int mdl)
+{
+	this->setShape(mdl);
+	this->setLocation();
+}
+
 Player::~Player() {}
 
 void Player::setShape(int mdl)
@@ -24,15 +29,15 @@ void Player::setShape(int mdl)
 	case 3:
 
 	case 4:
-																			    cell[4][0] = '_'; cell[5][0] = '_';	cell[6][0] = '_'; cell[7][0] = '_';	cell[8][0] = '_'; cell[9][0] = '_';	cell[10][0] = '_';
-						  cell[1][1] = '_';	cell[2][1] = '_'; cell[3][1] = '|';																																   cell[11][1] = '|'; cell[12][1] = '_'; cell[13][1] = '_';
-						  cell[0][2] = '|';					  cell[3][2] = '|';																																   cell[11][2] = '|';										cell[14][2] = '|';
-		cell[0][3] = '|'; cell[1][3] = '_';	cell[2][3] = '_'; cell[3][3] = '|';	cell[4][3] = '-'; cell[5][3] = '-';	cell[6][3] = '-'; cell[7][3] = '-';	cell[8][3] = '-'; cell[9][3] = '-';	cell[10][3] = '-'; cell[11][3] = '|'; cell[12][3] = '_'; cell[13][3] = '_';	cell[14][3] = '|';
-															  cell[3][4] = '|';																																   cell[11][4] = '|';
-						  cell[1][5] = '_';	cell[2][5] = '_'; cell[3][5] = '|';																																   cell[11][5] = '|'; cell[12][5] = '_'; cell[13][5] = '_';
-		cell[0][6] = '|';									  cell[3][6] = '|';																																   cell[11][6] = '|';										cell[14][6] = '|';
-		cell[0][7] = '|'; cell[1][7] = '_'; cell[2][7] = '_'; cell[3][7] = '|';																																   cell[11][7] = '|'; cell[12][7] = '_'; cell[13][7] = '_';	cell[14][7] = '|';
-															  cell[3][8] = '|';	cell[4][8] = '_'; cell[5][8] = '_';	cell[6][8] = '_'; cell[7][8] = '_';	cell[8][8] = '_'; cell[9][8] = '_';	cell[10][8] = '_'; cell[11][8] = '|';
+																			    cell[0][4] = '_'; cell[0][5] = '_';	cell[0][6] = '_'; cell[0][7] = '_';	cell[0][8] = '_'; cell[0][9] = '_';	cell[0][10] = '_';
+						  cell[1][1] = '_';	cell[1][2] = '_'; cell[1][3] = '|';																																   cell[1][11] = '|'; cell[1][12] = '_'; cell[1][13] = '_';
+		cell[2][0] = '|';									  cell[2][3] = '|';																																   cell[2][11] = '|';										cell[2][14] = '|';
+		cell[3][0] = '|'; cell[3][1] = '_';	cell[3][2] = '_'; cell[3][3] = '|';	cell[3][4] = '-'; cell[3][5] = '-';	cell[3][6] = '-'; cell[3][7] = '-';	cell[3][8] = '-'; cell[3][9] = '-';	cell[3][10] = '-'; cell[3][11] = '|'; cell[3][12] = '_'; cell[3][13] = '_';	cell[3][14] = '|';
+															  cell[4][3] = '|';																																   cell[4][11] = '|';
+						  cell[5][1] = '_';	cell[5][2] = '_'; cell[5][3] = '|';																																   cell[5][11] = '|'; cell[5][12] = '_'; cell[5][13] = '_';
+		cell[6][0] = '|';									  cell[6][3] = '|';																																   cell[6][11] = '|';										cell[6][14] = '|';
+		cell[7][0] = '|'; cell[7][1] = '_'; cell[7][2] = '_'; cell[7][3] = '|';																																   cell[7][11] = '|'; cell[7][12] = '_'; cell[7][13] = '_';	cell[7][14] = '|';
+															  cell[8][3] = '|';	cell[8][4] = '_'; cell[8][5] = '_';	cell[8][6] = '_'; cell[8][7] = '_';	cell[8][8] = '_'; cell[8][9] = '_';	cell[8][10] = '_'; cell[8][11] = '|';
 		/*     _______
 		    __|       |__
 		   |  |       |  |
