@@ -20,16 +20,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Project\Background.cpp" />
+    <ClCompile Include="Project\Borders.cpp" />
     <ClCompile Include="Project\main.cpp" />
     <ClCompile Include="Project\Menu.cpp" />
     <ClCompile Include="Project\Player.cpp" />
+    <ClCompile Include="Project\Renderer.cpp" />
     <ClCompile Include="Project\Traffic.cpp" />
     <ClCompile Include="Project\Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Project\Background.h" />
+    <ClInclude Include="Project\Borders.h" />
     <ClInclude Include="Project\Menu.h" />
     <ClInclude Include="Project\Player.h" />
+    <ClInclude Include="Project\Renderer.h" />
     <ClInclude Include="Project\Traffic.h" />
     <ClInclude Include="Project\Vehicle.h" />
   </ItemGroup>

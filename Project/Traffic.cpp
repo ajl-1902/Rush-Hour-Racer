@@ -8,9 +8,12 @@ Traffic::~Traffic() {}
 void Traffic::setShape(int mdl)
 {
 	for (int i = 0; i < traffic_sizeX; i++)
+	{
 		for (int j = 0; j < traffic_sizeY; j++)
+		{
 			cell[i][j] = ' ';
-
+		}
+	}
 }
 
 char Traffic::getShape(int X, int Y)
@@ -35,4 +38,16 @@ void Traffic::setLocation()
 			cell_pos[i][j][1] = this->getPos()[1] + j;
 		}
 	}
+}
+
+bool Traffic::isHere(int X, int Y)
+{
+	for (int i = 0; i < traffic_sizeX; i++)
+	{
+		for (int j = 0; j < traffic_sizeY; j++)
+		{
+			if (cell_pos[i][j][0] == X && cell_pos[i][j][1] == Y) { return true; }
+		}
+	}
+	return false;
 }

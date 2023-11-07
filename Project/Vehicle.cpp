@@ -28,3 +28,12 @@ int Vehicle::getVel()
 {
 	return vel;
 }
+
+char Vehicle::getShapeDelta(int X, int Y, char curr_frame)
+{
+	if (this->isHere(X, Y))
+	{
+		return this->getShape(X, Y);
+	}
+	else return curr_frame;
+}

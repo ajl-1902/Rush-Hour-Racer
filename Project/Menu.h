@@ -2,6 +2,7 @@
 #include "Background.h"
 #include "Player.h"
 #include "Windows.h"
+#include "Renderer.h"
 using namespace std;
 
 class Menu

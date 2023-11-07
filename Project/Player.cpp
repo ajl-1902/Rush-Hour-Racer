@@ -8,8 +8,12 @@ Player::~Player() {}
 void Player::setShape(int mdl)
 {
 	for (int i = 0; i < player_sizeX; i++)
+	{
 		for (int j = 0; j < player_sizeY; j++)
+		{
 			cell[i][j] = ' ';
+		}
+	}
 
 	switch (mdl)
 	{
@@ -64,4 +68,16 @@ void Player::setLocation()
 			cell_pos[i][j][1] = this->getPos()[1] + j;
 		}
 	}
+}
+
+bool Player::isHere(int X, int Y)
+{
+	for (int i = 0; i < player_sizeX; i++)
+	{
+		for (int j = 0; j < player_sizeY; j++)
+		{
+			if (cell_pos[i][j][0] == X && cell_pos[i][j][1] == Y) { return true; }
+		}
+	}
+	return false;
 }

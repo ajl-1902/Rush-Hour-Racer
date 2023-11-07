@@ -19,4 +19,5 @@ public:
 	void setShape(int);
 	char getShape(int, int);
 	void setLocation();
+	bool isHere(int, int);
 };

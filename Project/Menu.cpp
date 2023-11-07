@@ -98,8 +98,11 @@ void Menu::RunGame()
 	//player.setShape(this->model);
 	//player.setPos(ScreenSize / 2 - 7, 2 * ScreenSize / 3);
 
-	Background draw_background;
-	draw_background.GameWindow();
+	//Background draw_background;
+	//draw_background.GameWindow();
+
+	Renderer game(difficulty);
+	game.DisplayFrame();
 
 	//cursor_pos = { (ScreenSize / 2) - 8, ScreenSize / 3 };
 	//SetConsoleCursorPosition(console, cursor_pos);

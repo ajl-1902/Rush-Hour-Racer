@@ -6,5 +6,4 @@ class Background
 {
 public:
 	void BootLogo();
-	void GameWindow();
 };
