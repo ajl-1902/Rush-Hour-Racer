@@ -16,7 +16,6 @@ Renderer::Renderer(int diff, int mdl)
 	player.setPos(ScreenSize / 2, ScreenSize / 3 + 4);
 	
 	Traffic traffic;
-	//traffic.setPos(1, ScreenSize / 3 + 4);
 	trffc.push_back(traffic);
 
 	Borders left('*', 0, 0);
@@ -52,7 +51,6 @@ void Renderer::GenerateFrame()
 				curr_frame[i][j] = trffc[k].getShapeDelta(i, j, curr_frame[i][j]);
 			}
 
-			//curr_frame[i][j] = traffic.getShapeDelta(i, j, curr_frame[i][j]);
 			curr_frame[i][j] = player.getShapeDelta(i, j, curr_frame[i][j]);
 		}
 }
@@ -110,15 +108,13 @@ void Renderer::NextFrame()
 	{
 		trffc[i].setPos(trffc[i].getPos()[0] + 1, trffc[i].getPos()[1]);
 	}
-	//traffic.setPos(traffic.getPos()[0] + 1, traffic.getPos()[1]);
 
-	//for (int i = 0; i < traffic.size(); i++)
-	//	(traffic[i]).setPos((traffic[i]).getPos()[0] + traffic[i].getVel(), (traffic[i]).getPos()[1] + traffic[i].getVel());
+	if ((trffc[0]).getPos()[0] > ScreenSize)
+	{
+		trffc.erase(trffc.begin());
+	}
 
-	//if ((trffc[0]).getPos()[0] > ScreenSize)
-	//	trffc.erase(trffc.begin());
-
-	if (frame_index % (40) == 0)
+	if (frame_index % (30) == 0)
 	{
 		Traffic traffic(traffic_lane);
 		trffc.push_back(traffic);
