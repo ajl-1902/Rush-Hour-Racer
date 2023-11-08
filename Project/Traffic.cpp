@@ -17,9 +17,9 @@ Traffic::Traffic(int prev_lane)
 	srand(time(0));
 	traffic_lane = prev_lane + (rand() % 3 - 1);
 
-	while (traffic_lane < 1 || traffic_lane > 3) {
-		traffic_lane = prev_lane + (rand() % 3 - 1);
-	}
+	//while (traffic_lane < 1 || traffic_lane > 3) {
+	//	traffic_lane = prev_lane + (rand() % 3 - 1);
+	//}
 
 	switch (traffic_lane)
 	{

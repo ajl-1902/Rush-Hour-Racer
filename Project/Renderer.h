@@ -15,7 +15,7 @@ private:
 	char prev_frame[ScreenSize][ScreenSize];
 	vector<Borders> borders;
 	Player player;
-	//vector<Traffic> traffic;
+	//vector<Traffic> trffc;
 	Traffic traffic;
 	int model;
 	int curr_lane;
