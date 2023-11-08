@@ -13,9 +13,10 @@ Renderer::Renderer(int diff, int mdl)
 
 	player.editModel(mdl);
 	this->model = mdl;
+	this->difficulty = diff;
 	player.setPos(ScreenSize / 2, ScreenSize / 3 + 4);
 	
-	Traffic traffic;
+	Traffic traffic(difficulty);
 	trffc.push_back(traffic);
 
 	Borders left('*', 0, 0);
@@ -106,7 +107,7 @@ void Renderer::NextFrame()
 
 	for (int i = 0; i < trffc.size(); i++)
 	{
-		trffc[i].setPos(trffc[i].getPos()[0] + 1, trffc[i].getPos()[1]);
+		trffc[i].setPos(trffc[i].getPos()[0] + trffc[i].getVel(), trffc[i].getPos()[1]);
 	}
 
 	if ((trffc[0]).getPos()[0] > ScreenSize)
@@ -114,9 +115,11 @@ void Renderer::NextFrame()
 		trffc.erase(trffc.begin());
 	}
 
-	if (frame_index % (30) == 0)
+	int delay_factor = 30 - 6 * (difficulty - 1);
+
+	if (frame_index % (delay_factor) == 0)
 	{
-		Traffic traffic(traffic_lane);
+		Traffic traffic(difficulty, traffic_lane);
 		trffc.push_back(traffic);
 	}
 }

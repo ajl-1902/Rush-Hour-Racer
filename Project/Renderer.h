@@ -17,6 +17,7 @@ private:
 	Player player;
 	vector<Traffic> trffc;
 	int model;
+	int difficulty;
 	int curr_lane;
 	int traffic_lane;
 	unsigned int frame_index;

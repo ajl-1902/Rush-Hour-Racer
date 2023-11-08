@@ -2,20 +2,25 @@
 #include "Traffic.h"
 using namespace std;
 
-Traffic::Traffic() 
+Traffic::Traffic(int diff) 
 {
 	this->setPos(1, 28);
-	this->setVel(1);
+
+	if (diff > 2) { this->setVel(2); }
+	else this->setVel(1);
+
 	this->setShape(1);
 	this->setLocation();
 }
 
-Traffic::Traffic(int prev_lane)
+Traffic::Traffic(int diff, int prev_lane)
 {
-	this->setVel(1);
+	if (diff > 2) { this->setVel(2); }
+	else this->setVel(1);
 
 	srand(time(0));
 	traffic_lane = prev_lane + (rand() % 3 - 1);
+	//this->setVel(rand() % 2 + 1); Variable speeds?
 
 	while (traffic_lane < 1 || traffic_lane > 3) 
 	{

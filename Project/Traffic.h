@@ -16,8 +16,8 @@ private:
 	int traffic_lane;
 
 public:
-	Traffic();
 	Traffic(int);
+	Traffic(int, int);
 
 	void setShape(int);
 	char getShape(int, int);
