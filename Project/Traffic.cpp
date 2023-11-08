@@ -10,9 +10,29 @@ Traffic::Traffic()
 	this->setLocation();
 }
 
-Traffic::Traffic(int arb)
+Traffic::Traffic(int prev_lane)
 {
+	this->setVel(1);
 
+	srand(time(0));
+	traffic_lane = prev_lane + (rand() % 3 - 1);
+
+	while (traffic_lane < 1 || traffic_lane > 3) {
+		traffic_lane = prev_lane + (rand() % 3 - 1);
+	}
+
+	switch (traffic_lane)
+	{
+	case 1:
+		this->setPos(1, 5);
+	case 2:
+		this->setPos(1, 28);
+	case 3:
+		this->setPos(1, 52);
+	}
+
+	this->setShape(1);
+	this->setLocation();
 }
 
 void Traffic::setShape(int mdl)

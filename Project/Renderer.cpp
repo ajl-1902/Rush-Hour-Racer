@@ -27,6 +27,7 @@ Renderer::Renderer(int diff, int mdl)
 	borders = { left,centerL,centerR,right };
 
 	curr_lane = 2;
+	traffic_lane = 2;
 	frame_index = 0;
 	dt = 0.1;
 }
@@ -113,6 +114,11 @@ void Renderer::NextFrame()
 
 	//if ((traffic[0]).getPos()[0] > ScreenSize)
 	//	traffic.erase(traffic.begin());
+
+	if (frame_index % (20) == 0)
+	{
+		Traffic traffic(traffic_lane);
+	}
 }
 
 void Renderer::LaneSwitch()

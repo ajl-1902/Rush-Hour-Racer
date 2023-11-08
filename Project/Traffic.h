@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <random>
 #include "Vehicle.h"
 using namespace std;
 
@@ -11,6 +12,8 @@ private:
 
 	char cell[traffic_sizeX][traffic_sizeY];
 	int cell_pos[traffic_sizeX][traffic_sizeY][2];
+
+	int traffic_lane;
 
 public:
 	Traffic();

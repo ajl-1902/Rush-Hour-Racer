@@ -19,6 +19,7 @@ private:
 	Traffic traffic;
 	int model;
 	int curr_lane;
+	int traffic_lane;
 	unsigned int frame_index;
 	double dt;
 	//vector<int> lane_pos;
