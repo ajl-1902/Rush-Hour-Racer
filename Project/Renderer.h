@@ -4,6 +4,7 @@
 #include "Menu.h"
 #include "Windows.h"
 #include "Borders.h"
+#include "Traffic.h"
 using namespace std;
 
 class Renderer
@@ -14,6 +15,8 @@ private:
 	char prev_frame[ScreenSize][ScreenSize];
 	vector<Borders> borders;
 	Player player;
+	//vector<Traffic> traffic;
+	Traffic traffic;
 	int model;
 	int curr_lane;
 	unsigned int frame_index;

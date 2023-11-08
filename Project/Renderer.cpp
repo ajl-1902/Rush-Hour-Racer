@@ -15,6 +15,11 @@ Renderer::Renderer(int diff, int mdl)
 	this->model = mdl;
 	player.setPos(ScreenSize / 2, ScreenSize / 3 + 4);
 	
+	//Traffic trffc;
+	//traffic.push_back(trffc);
+	
+	traffic.setPos(1, ScreenSize / 3 + 4);
+
 	Borders left('*', 0, 0);
 	Borders centerL('|', 0, ScreenSize / 3);
 	Borders centerR('|', 0, 2 * ScreenSize / 3 - 2);
@@ -42,6 +47,12 @@ void Renderer::GenerateFrame()
 			curr_frame[i][j] = borders[2].getShapeDelta(i, j, curr_frame[i][j]);
 			curr_frame[i][j] = borders[3].getShapeDelta(i, j, curr_frame[i][j]);
 
+			//for (int i = 0; i < traffic.size(); i++)
+			//{
+			//	curr_frame[i][j] = traffic[i].getShapeDelta(i, j, curr_frame[i][j]);
+			//}
+
+			curr_frame[i][j] = traffic.getShapeDelta(i, j, curr_frame[i][j]);
 			curr_frame[i][j] = player.getShapeDelta(i, j, curr_frame[i][j]);
 		}
 }
@@ -94,6 +105,14 @@ void Renderer::NextFrame()
 {
 	frame_index++;
 	player.setPos(this->getLanePos(curr_lane)[0], this->getLanePos(curr_lane)[1]);
+
+	traffic.setPos(traffic.getPos()[0] + 1, traffic.getPos()[1]);
+
+	//for (int i = 0; i < traffic.size(); i++)
+	//	(traffic[i]).setPos((traffic[i]).getPos()[0] + traffic[i].getVel(), (traffic[i]).getPos()[1] + traffic[i].getVel());
+
+	//if ((traffic[0]).getPos()[0] > ScreenSize)
+	//	traffic.erase(traffic.begin());
 }
 
 void Renderer::LaneSwitch()
