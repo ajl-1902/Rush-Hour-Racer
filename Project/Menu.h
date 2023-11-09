@@ -1,8 +1,8 @@
 #pragma once
 #include "Background.h"
 #include "Player.h"
-#include "Windows.h"
 #include "Renderer.h"
+#include "Windows.h"
 using namespace std;
 
 class Menu
@@ -15,7 +15,9 @@ private:
 
 public:
 	static const int ScreenSize = 72;
+
 	Menu();
+
 	void BootSequence();
 	void MainMenu();
 	void RunGame();

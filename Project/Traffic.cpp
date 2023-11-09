@@ -32,9 +32,11 @@ Traffic::Traffic(int diff, int prev_lane)
 	case 1:
 		this->setPos(1, 5);
 		break;
+
 	case 2:
 		this->setPos(1, 28);
 		break;
+
 	case 3:
 		this->setPos(1, 52);
 		break;

@@ -5,6 +5,7 @@ using namespace std;
 Player::Player()
 {
 	model = 1;
+
 	this->setShape(model);
 	this->setLocation();
 }
@@ -119,8 +120,7 @@ char Player::getShape(int X, int Y)
 	{
 		for (int j = 0; j < player_sizeY; j++)
 		{
-			if (cell_pos[i][j][0] == X && cell_pos[i][j][1] == Y)
-				return cell[i][j];
+			if (cell_pos[i][j][0] == X && cell_pos[i][j][1] == Y) { return cell[i][j]; }
 		}
 	}
 }

@@ -1,11 +1,11 @@
 #include "Borders.h"
+using namespace std;
 
-Borders::Borders() {}
-
-Borders::Borders(char bdr, int X, int Y)
+Borders::Borders(int X, int Y, char bdr)
 {
 	this->setPos(X, Y);
-	this->border = bdr;
+	border = bdr;
+
 	this->setShape(border);
 	this->setLocation();
 }

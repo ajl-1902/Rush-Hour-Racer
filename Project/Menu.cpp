@@ -18,7 +18,7 @@ Menu::Menu()
 
 void Menu::BootSequence()
 {
-	cout << "Please maximize the window before continuing for the best experience" << endl << endl;
+	cout << "Please maximize the window before continuing for the best experience\n\n";
 	system("pause");
 	system("cls");
 
@@ -27,21 +27,20 @@ void Menu::BootSequence()
 
 	cursor_pos = { (ScreenSize / 3) - 2, ScreenSize / 6 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
-	cout << "Rush" << endl;
+	cout << "Rush\n";
 	Sleep(750);
 
 	cursor_pos = { (ScreenSize / 2) - 2, ScreenSize / 4 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
-	cout << "Hour" << endl;
+	cout << "Hour\n";
 	Sleep(750);
 
 	cursor_pos = { (2 * ScreenSize / 3) - 2, 2 * ScreenSize / 6 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
-	cout << "Racer" << endl;
+	cout << "Racer\n";
 	Sleep(3000);
-	//system("pause");
 
-	MainMenu();
+	this->MainMenu();
 }
 
 void Menu::MainMenu()
@@ -50,15 +49,15 @@ void Menu::MainMenu()
 	{
 		system("cls");
 		do {
-			cout << "Welcome to Rush Hour Racer!" << endl;
-			cout << "1. Play" << endl << "2. Difficulty" << endl << "3. Customization" << endl << "4. How to Play" << endl << "5. Exit" << endl;
+			cout << "Welcome to Rush Hour Racer!\n";
+			cout << "1. Play" << "\n" << "2. Difficulty" << "\n" << "3. Customization" << "\n" << "4. How to Play" << "\n" << "5. Exit" << "\n";
 
-			cin >> this->choice;
+			cin >> choice;
 
 			if (ChoiceCheck5)
 			{
 				system("cls");
-				cout << "Invalid selection. Enter a value from 1-5" << endl << endl;
+				cout << "Invalid selection. Enter a value from 1-5\n\n";
 				Sleep(2000);
 			}
 		} while (ChoiceCheck5);
@@ -66,22 +65,26 @@ void Menu::MainMenu()
 		switch (choice)
 		{
 		case 1:
-			RunGame();
+			this->RunGame();
 			break;
+
 		case 2:
-			DiffSettings();
+			this->DiffSettings();
 			break;
+
 		case 3:
-			CustomizationSettings();
+			this->CustomizationSettings();
 			break;
+
 		case 4:
 			system("cls");
-			cout << "Instructions" << endl;
+			cout << "Instructions\n";
 			break;
+
 		case 5:
 			exit = 1;
 			system("cls");
-			cout << "Thanks for playing!" << endl;
+			cout << "Thanks for playing!\n";
 			Sleep(2000);
 			break;
 		}
@@ -111,21 +114,20 @@ void Menu::DiffSettings()
 {
 	system("cls");
 	do {
-		cout << "Difficulty setting controls the overall frequency and density of traffic. Select an option below:" << endl;
-		cout << "1. Easy" << endl << "2. Normal" << endl << "3. Hard" << endl << "4. Insane" << endl;
+		cout << "The difficulty setting affects the speed and density of traffic. Select an option below:\n";
+		cout << "1. Easy" << "\n" << "2. Normal" << "\n" << "3. Hard" << "\n" << "4. Insane" << "\n";
 
 		cin >> choice;
-		this->difficulty = choice;
+		difficulty = choice;
 
 		if (ChoiceCheck4)
 		{
 			system("cls");
-			cout << "Invalid selection. Enter a value from 1-4" << endl << endl;
-			Sleep(1000);
+			cout << "Invalid selection. Enter a value from 1-4\n\n";
 		}
 	} while (ChoiceCheck4);
 
-	MainMenu();
+	this->MainMenu();
 }
 
 void Menu::CustomizationSettings()
@@ -136,7 +138,7 @@ void Menu::CustomizationSettings()
 		cout << "1. Car" << endl << "2. Monster Truck" << endl << "3. Formula" << endl << "4. Tank" << endl;
 
 		cin >> choice;
-		this->model = choice;
+		model = choice;
 
 		if (ChoiceCheck4)
 		{

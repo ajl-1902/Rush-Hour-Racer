@@ -6,12 +6,14 @@ class Borders:public Vehicle
 {
 private:
 	static const int ScreenSize = 72;
+
 	char cell[ScreenSize];
 	int cell_pos[ScreenSize][2];
+
 	char border;
+
 public:
-	Borders();
-	Borders(char, int, int);
+	Borders(int, int, char);
 
 	void setShape(int);
 	char getShape(int, int);

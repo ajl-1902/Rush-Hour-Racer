@@ -15,6 +15,7 @@ public:
 	vector<int> getPos();
 	void setVel(int);
 	int getVel();
+
 	char getShapeDelta(int, int, char);
 
 	virtual void setShape(int) = 0;
