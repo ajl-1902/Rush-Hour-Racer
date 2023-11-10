@@ -113,6 +113,7 @@ void Menu::RunGame()
 	for (int i = 0; i < ScreenSize / 3 + 2; i++) { cout << "\n"; }
 	system("pause");
 	
+	score = 0;
 	this->MainMenu();
 }
 
@@ -153,4 +154,6 @@ void Menu::CustomizationSettings()
 			Sleep(1000);
 		}
 	} while (ChoiceCheck4);
+
+	this->MainMenu();
 }

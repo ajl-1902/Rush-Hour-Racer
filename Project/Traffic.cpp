@@ -30,8 +30,6 @@ Traffic::Traffic(int diff, int prev_lane)
 		traffic_lane = (rand() % 3 + 1);
 	}
 
-	//this->setVel(rand() % 2 + 1); Variable speeds?
-
 	switch (traffic_lane)
 	{
 	case 1:

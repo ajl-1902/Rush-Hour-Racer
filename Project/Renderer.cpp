@@ -123,7 +123,7 @@ void Renderer::NextFrame()
 		traffic[i].setPos(traffic[i].getPos()[0] + traffic[i].getVel(), traffic[i].getPos()[1]);
 	}
 
-	if ((traffic[0]).getPos()[0] > ScreenSize)
+	if ((traffic[0]).getPos()[0] > 2 * ScreenSize / 3)
 	{
 		traffic.erase(traffic.begin());
 	}
@@ -180,7 +180,7 @@ bool Renderer::checkCollision()
 	{
 		if (traffic[i].getPos()[0] >= 28 && traffic[i].getPos()[0] <= 44 && traffic[i].getTrafficLane() == curr_lane)
 		{
-			return false;
+			return false; // Player is allowed one frame of rear clipping to prevent seemingly off-screen collisions
 		}
 	}
 	return true;
