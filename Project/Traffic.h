@@ -13,6 +13,7 @@ private:
 	int cell_pos[traffic_sizeX][traffic_sizeY][2];
 
 	int traffic_lane;
+	int count;
 
 public:
 	Traffic(int);

@@ -23,9 +23,9 @@ private:
 	int difficulty;
 	int curr_lane;
 	int traffic_lane;
+	int delay_factor;
 
 	unsigned int frame_index;
-	double dt;
 
 public:
 	Renderer(int, int);

@@ -4,9 +4,13 @@ using namespace std;
 
 Traffic::Traffic(int diff) 
 {
+	srand(time(NULL));
+	count = 0;
+
 	this->setPos(1, 28);
 
-	if (diff > 2) { this->setVel(2); }
+	if (diff == 4) { this->setVel(3); }
+	else if (diff == 3) { this->setVel(2); }
 	else this->setVel(1);
 
 	this->setShape(1);
@@ -15,17 +19,18 @@ Traffic::Traffic(int diff)
 
 Traffic::Traffic(int diff, int prev_lane)
 {
-	if (diff > 2) { this->setVel(2); }
+	if (diff == 4) { this->setVel(3); }
+	else if (diff == 3) { this->setVel(2); }
 	else this->setVel(1);
 
-	srand(time(0));
-	traffic_lane = prev_lane + (rand() % 3 - 1);
-	//this->setVel(rand() % 2 + 1); Variable speeds?
+	traffic_lane = (rand() % 3 + 1);
 
-	while (traffic_lane < 1 || traffic_lane > 3) 
+	while (traffic_lane == prev_lane) // Prevents spawning of long single-lane chains
 	{
-		traffic_lane = prev_lane + (rand() % 3 - 1);
+		traffic_lane = (rand() % 3 + 1);
 	}
+
+	//this->setVel(rand() % 2 + 1); Variable speeds?
 
 	switch (traffic_lane)
 	{

@@ -31,7 +31,6 @@ Renderer::Renderer(int diff, int mdl)
 	curr_lane = 2;
 	traffic_lane = 2;
 	frame_index = 0;
-	dt = 0.1;
 }
 
 void Renderer::GenerateFrame()
@@ -129,7 +128,21 @@ void Renderer::NextFrame()
 		traffic.erase(traffic.begin());
 	}
 
-	int delay_factor = 30 - 6 * (difficulty - 1);
+	switch (difficulty) // Linear/exponential scaling create impossible densities on higher difficuties - must be set manually
+	{
+	case 1:
+		delay_factor = 25;
+		break;
+	case 2:
+		delay_factor = 20;
+		break;
+	case 3:
+		delay_factor = 10;
+		break;
+	case 4:
+		delay_factor = 7;
+		break;
+	}
 
 	if (frame_index % (delay_factor) == 0)
 	{

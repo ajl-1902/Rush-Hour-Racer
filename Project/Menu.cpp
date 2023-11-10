@@ -10,11 +10,10 @@ COORD cursor_pos = { 0,0 };
 
 Menu::Menu()
 {
-	choice = 0;
-	exit = 0;
-	difficulty = 1;
-	model = 1;
-	score = 0;
+	choice = 0, exit = 0, score = 0;
+	difficulty = 1, model = 1;
+
+	dt = 1.0 / static_cast<double>(fps);
 }
 
 void Menu::BootSequence()
@@ -103,15 +102,15 @@ void Menu::RunGame()
 	{
 		game.LaneSwitch();
 		game.NextFrame();
-		Sleep(100);
+		Sleep(static_cast<int>(1000 * dt));
 		game.UpdateFrame();
 		score++;
 	}
 
-	cursor_pos = { ScreenSize / 2 - 8,22 };
+	cursor_pos = { ScreenSize / 2 - 8,ScreenSize / 3 - 2 };
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Your score: " << score;
-	for (int i = 0; i < 26; i++) { cout << "\n"; }
+	for (int i = 0; i < ScreenSize / 3 + 2; i++) { cout << "\n"; }
 	system("pause");
 	
 	this->MainMenu();
