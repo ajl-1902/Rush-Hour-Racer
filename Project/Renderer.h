@@ -37,4 +37,5 @@ public:
 
 	void LaneSwitch();
 	vector<int> getLanePos(int);
+	bool checkCollision();
 };

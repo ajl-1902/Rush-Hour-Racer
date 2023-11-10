@@ -14,6 +14,7 @@ Menu::Menu()
 	exit = 0;
 	difficulty = 1;
 	model = 1;
+	score = 0;
 }
 
 void Menu::BootSequence()
@@ -98,16 +99,22 @@ void Menu::RunGame()
 	Renderer game(difficulty, model);
 	game.DisplayFrame();
 
-	while (true)
+	while (game.checkCollision())
 	{
 		game.LaneSwitch();
 		game.NextFrame();
 		Sleep(100);
 		game.UpdateFrame();
+		score++;
 	}
 
+	cursor_pos = { ScreenSize / 2 - 8,22 };
+	SetConsoleCursorPosition(console, cursor_pos);
+	cout << "Your score: " << score;
+	for (int i = 0; i < 26; i++) { cout << "\n"; }
 	system("pause");
-	MainMenu();
+	
+	this->MainMenu();
 }
 
 void Menu::DiffSettings()

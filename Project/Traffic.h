@@ -22,4 +22,6 @@ public:
 	char getShape(int, int);
 	void setLocation();
 	bool isHere(int, int);
+
+	int getTrafficLane();
 };

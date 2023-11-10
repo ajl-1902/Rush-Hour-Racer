@@ -102,3 +102,8 @@ bool Traffic::isHere(int X, int Y)
 	}
 	return false;
 }
+
+int Traffic::getTrafficLane()
+{
+	return traffic_lane;
+}

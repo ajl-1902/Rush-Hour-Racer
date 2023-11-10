@@ -135,6 +135,7 @@ void Renderer::NextFrame()
 	{
 		Traffic trffc(difficulty, traffic_lane);
 		traffic.push_back(trffc);
+		traffic_lane = trffc.getTrafficLane();
 	}
 }
 
@@ -158,5 +159,17 @@ vector<int> Renderer::getLanePos(int curr_lane)
 	case 3:
 		return { ScreenSize / 2, 5 * ScreenSize / 6 - 8 };
 	}
+}
+
+bool Renderer::checkCollision()
+{
+	for (int i = 0; i < traffic.size(); i++)
+	{
+		if (traffic[i].getPos()[0] >= 28 && traffic[i].getPos()[0] <= 44 && traffic[i].getTrafficLane() == curr_lane)
+		{
+			return false;
+		}
+	}
+	return true;
 }
 

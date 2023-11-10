@@ -12,6 +12,7 @@ private:
 	bool exit;
 	int difficulty;
 	int model;
+	int score;
 
 public:
 	static const int ScreenSize = 72;
