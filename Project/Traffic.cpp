@@ -8,10 +8,7 @@ Traffic::Traffic(int diff)
 	count = 0;
 
 	this->setPos(1, 28);
-
-	if (diff == 4) { this->setVel(3); }
-	else if (diff == 3) { this->setVel(2); }
-	else this->setVel(1);
+	this->setVel(diff);
 
 	this->setShape(1);
 	this->setLocation();
@@ -19,9 +16,7 @@ Traffic::Traffic(int diff)
 
 Traffic::Traffic(int diff, int prev_lane)
 {
-	if (diff == 4) { this->setVel(3); }
-	else if (diff == 3) { this->setVel(2); }
-	else this->setVel(1);
+	this->setVel(diff);
 
 	traffic_lane = (rand() % 3 + 1);
 

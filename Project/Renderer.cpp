@@ -131,16 +131,16 @@ void Renderer::NextFrame()
 	switch (difficulty) // Linear/exponential scaling create impossible densities on higher difficuties - must be set manually
 	{
 	case 1:
-		delay_factor = 25;
-		break;
-	case 2:
 		delay_factor = 20;
 		break;
-	case 3:
+	case 2:
 		delay_factor = 10;
 		break;
-	case 4:
+	case 3:
 		delay_factor = 7;
+		break;
+	case 4:
+		delay_factor = 5;
 		break;
 	}
 
