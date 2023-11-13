@@ -9,8 +9,8 @@ class Borders:public Vehicle
 private:
 	static const int ScreenSize = 72;
 
-	char cell[ScreenSize];
-	int cell_pos[ScreenSize][2];
+	char cell[ScreenSize]; // Stores character located at a certain point
+	int cell_pos[ScreenSize][2]; // Stores the physical location of the characters above
 
 	char border;
 

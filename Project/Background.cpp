@@ -4,7 +4,7 @@ using namespace std;
 
 void Background::BootLogo() // Not the most concise way to draw logo, but allows for much more flexibility with design changes
 {
-	Menu window;
+	Menu window; // Instantiating object from Menu class to gain access to ScreenSize variable
 	unsigned int i = 0;
 
 	for (i = 0; i < window.ScreenSize / 2; i++) { cout << "* "; }

@@ -13,11 +13,11 @@ private:
 	int difficulty;
 	int model;
 	int score;
-	const int fps = 10;
+	const int fps = 10; // Number of times the frame is updated per second
 	double dt;
 
 public:
-	static const int ScreenSize = 72;
+	static const int ScreenSize = 72; // Defines edges of game window
 
 	Menu();
 

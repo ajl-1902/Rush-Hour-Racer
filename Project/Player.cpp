@@ -4,13 +4,13 @@ using namespace std;
 
 Player::Player()
 {
-	model = 1;
+	model = 1; // Default player model is basic car unless player selects otherwise
 
 	this->setShape(model);
 	this->setLocation();
 }
 
-void Player::setShape(int mdl)
+void Player::setShape(int mdl) // Defines character array for current object based on selected model
 {
 	for (int i = 0; i < player_sizeX; i++)
 	{
@@ -114,7 +114,7 @@ void Player::setShape(int mdl)
 	}
 }
 
-char Player::getShape(int X, int Y)
+char Player::getShape(int X, int Y) // Retrieves character at a certain (X,Y) location
 {
 	for (int i = 0; i < player_sizeX; i++)
 	{
@@ -125,7 +125,7 @@ char Player::getShape(int X, int Y)
 	}
 }
 
-void Player::setLocation()
+void Player::setLocation() // Defines the locations of each character in the game window plane
 {
 	for (int i = 0; i < player_sizeX; i++)
 	{
@@ -137,7 +137,7 @@ void Player::setLocation()
 	}
 }
 
-bool Player::isHere(int X, int Y)
+bool Player::isHere(int X, int Y) // Checks is a player character is present at the specified location
 {
 	for (int i = 0; i < player_sizeX; i++)
 	{
@@ -149,7 +149,7 @@ bool Player::isHere(int X, int Y)
 	return false;
 }
 
-void Player::editModel(int mdl)
+void Player::editModel(int mdl) // Allows player model to be overwritten after an object is instantiated
 {
 	this->setShape(mdl);
 	this->setLocation();

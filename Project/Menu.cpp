@@ -2,6 +2,7 @@
 #include "Menu.h"
 using namespace std;
 
+// Used to reduce visual clutter while verifying player input
 #define ChoiceCheck5 choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5
 #define ChoiceCheck4 choice != 1 && choice != 2 && choice != 3 && choice != 4
 
@@ -13,19 +14,21 @@ Menu::Menu()
 	choice = 0, exit = 0, score = 0;
 	difficulty = 1, model = 1;
 
-	dt = 1.0 / static_cast<double>(fps);
+	dt = 1.0 / static_cast<double>(fps); // Fps variable is an integer, so it is converted to a double to properly define the time step dt
 }
 
 void Menu::BootSequence()
 {
+	// \n is used over endl wherever possible to prevent unnecessary flushing of output buffer - noticeably improves in-game performance
+	// Has negligible effect in menus, but is included to maintain a consistent format
 	cout << "Please maximize the window before continuing for the best experience\n\n";
 	system("pause");
 	system("cls");
 
 	Background draw_background;
-	draw_background.BootLogo();
+	draw_background.BootLogo(); // Draws initial splash screen
 
-	cursor_pos = { (ScreenSize / 3) - 2, ScreenSize / 6 + 3 };
+	cursor_pos = { (ScreenSize / 3) - 2, ScreenSize / 6 + 3 }; // Moves cursor to appropriate location to output text over logo graphics
 	SetConsoleCursorPosition(console, cursor_pos);
 	cout << "Rush\n";
 	Sleep(750);
@@ -40,7 +43,7 @@ void Menu::BootSequence()
 	cout << "Racer\n";
 	Sleep(3000);
 
-	this->MainMenu();
+	this->MainMenu(); // Loads main menu
 }
 
 void Menu::MainMenu()
@@ -54,7 +57,7 @@ void Menu::MainMenu()
 
 			cin >> choice;
 
-			if (ChoiceCheck5)
+			if (ChoiceCheck5) // Ensures that player can not enter a numerical value outside of the defined range
 			{
 				system("cls");
 				cout << "Invalid selection. Enter a value from 1-5\n\n";
@@ -81,7 +84,7 @@ void Menu::MainMenu()
 			break;
 
 		case 5:
-			exit = 1;
+			exit = 1; // Exit condition for while loop is satisfied and program ends
 			system("cls");
 			cout << "Thanks for playing!\n";
 			Sleep(2000);
@@ -95,13 +98,13 @@ void Menu::RunGame()
 	system("cls");
 
 	Renderer game(difficulty, model);
-	game.DisplayFrame();
+	game.DisplayFrame(); // Generates first frame
 
-	while (game.checkCollision())
+	while (game.checkCollision()) // Game checks for a collision after each frame
 	{
 		game.LaneSwitch();
 		game.NextFrame();
-		Sleep(static_cast<int>(1000 * dt));
+		Sleep(static_cast<int>(1000 * dt)); // Unless dt is massive (which would only occur for fps approaching 0), casting result to an int will not result in loss of information
 		game.UpdateFrame();
 		score++;
 	}
@@ -112,7 +115,7 @@ void Menu::RunGame()
 	for (int i = 0; i < ScreenSize / 3 + 2; i++) { cout << "\n"; }
 	system("pause");
 	
-	score = 0;
+	score = 0; // Resets score for subsequent attempts in same program execution
 	this->MainMenu();
 }
 

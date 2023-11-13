@@ -1,7 +1,7 @@
 #include "Borders.h"
 using namespace std;
 
-Borders::Borders(int X, int Y, char bdr)
+Borders::Borders(int X, int Y, char bdr) // Game window is made up of two different characters, so the object must be instantiated with the character it plans to use
 {
 	this->setPos(X, Y);
 	border = bdr;
@@ -10,15 +10,15 @@ Borders::Borders(int X, int Y, char bdr)
 	this->setLocation();
 }
 
-void Borders::setShape(int arb)
+void Borders::setShape(int arb) // Defines character array for current object
 {
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 	{
-		cell[i] = border;
+		cell[i] = border; // Border has a fixed X location, so only need to step through Y to fill character array
 	}
 }
 
-char Borders::getShape(int X, int Y)
+char Borders::getShape(int X, int Y) // Retrieves character at a certain (X,Y) location
 {
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 	{
@@ -29,7 +29,7 @@ char Borders::getShape(int X, int Y)
 	}
 }
 
-void Borders::setLocation()
+void Borders::setLocation() // Defines the locations of each character in the game window plane
 {
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 	{
@@ -38,7 +38,7 @@ void Borders::setLocation()
 	}
 }
 
-bool Borders::isHere(int X, int Y)
+bool Borders::isHere(int X, int Y) // Checks if there is a character present at the requested location - not used in relation to border class (only here to override virtual function in base class)
 {
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
 	{

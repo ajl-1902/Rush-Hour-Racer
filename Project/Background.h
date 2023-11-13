@@ -5,5 +5,5 @@ using namespace std;
 class Background
 {
 public:
-	void BootLogo();
+	void BootLogo(); // Draws initial splash screen when opening the game
 };
