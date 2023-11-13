@@ -26,4 +26,5 @@ public:
 	void RunGame();
 	void DiffSettings();
 	void CustomizationSettings();
+	void Instructions();
 };

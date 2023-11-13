@@ -2,7 +2,7 @@
 #include "Background.h"
 using namespace std;
 
-void Background::BootLogo()
+void Background::BootLogo() // Not the most concise way to draw logo, but allows for much more flexibility with design changes
 {
 	Menu window;
 	unsigned int i = 0;

@@ -50,7 +50,7 @@ void Menu::MainMenu()
 		system("cls");
 		do {
 			cout << "Welcome to Rush Hour Racer!\n";
-			cout << "1. Play" << "\n" << "2. Difficulty" << "\n" << "3. Customization" << "\n" << "4. How to Play" << "\n" << "5. Exit" << "\n";
+			cout << "1. Play\n" << "2. Difficulty\n" << "3. Customization\n" << "4. How to Play\n" << "5. Exit\n";
 
 			cin >> choice;
 
@@ -77,8 +77,7 @@ void Menu::MainMenu()
 			break;
 
 		case 4:
-			system("cls");
-			cout << "Instructions\n";
+			this->Instructions();
 			break;
 
 		case 5:
@@ -122,7 +121,7 @@ void Menu::DiffSettings()
 	system("cls");
 	do {
 		cout << "The difficulty setting affects the speed and density of traffic. Select an option below:\n";
-		cout << "1. Easy" << "\n" << "2. Normal" << "\n" << "3. Hard" << "\n" << "4. Insane" << "\n";
+		cout << "1. Easy\n" << "2. Normal\n" << "3. Hard\n" << "4. Insane\n";
 
 		cin >> choice;
 		difficulty = choice;
@@ -141,8 +140,8 @@ void Menu::CustomizationSettings()
 {
 	system("cls");
 	do {
-		cout << "Customize the model for the player car. Note that car model is purely cosmetic and does not affect performance" << endl;
-		cout << "1. Car" << endl << "2. Monster Truck" << endl << "3. Formula" << endl << "4. Tank" << endl;
+		cout << "Customize the model for the player car. Note that car model is purely cosmetic and does not affect performance" << "\n";
+		cout << "1. Car\n" << "2. Monster Truck\n" << "3. Formula\n" << "4. Tank\n";
 
 		cin >> choice;
 		model = choice;
@@ -150,10 +149,20 @@ void Menu::CustomizationSettings()
 		if (ChoiceCheck4)
 		{
 			system("cls");
-			cout << "Invalid selection. Enter a value from 1-4" << endl << endl;
-			Sleep(1000);
+			cout << "Invalid selection. Enter a value from 1-4\n\n";
 		}
 	} while (ChoiceCheck4);
+
+	this->MainMenu();
+}
+
+void Menu::Instructions()
+{
+	system("cls");
+	cout << "The objective of the game is to weave through lanes of oncoming traffic and attempt to survive for as long as possible.\n"
+		<< "After beginning a new run, use the left and right arrow keys to move the player car between adjacent lanes.\n"
+		<< "You receive 10 points for every second you survive, and there is no finite win condition, so aim for the highest score!\n\n";
+	system("pause");
 
 	this->MainMenu();
 }

@@ -2,6 +2,8 @@
 #include "Vehicle.h"
 using namespace std;
 
+// Borders was originally a standalone class, but making use of functions derived from Vehicle made outputting of game window significantly more efficient
+// (Hence why the names "Borders" and "Vehicle" do not explicitly relate to each other)
 class Borders:public Vehicle
 {
 private:
