@@ -3,7 +3,6 @@
 #include "Player.h"
 #include "Renderer.h"
 #include "Windows.h"
-using namespace std;
 
 class Menu
 {

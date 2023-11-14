@@ -1,7 +1,6 @@
 #pragma once
 #include <random>
 #include "Vehicle.h"
-using namespace std;
 
 class Traffic :public Vehicle
 {

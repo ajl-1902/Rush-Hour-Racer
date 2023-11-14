@@ -1,5 +1,4 @@
 #include "Vehicle.h"
-using namespace std;
 
 Vehicle::Vehicle() // Sets default motion variables to zero
 {
@@ -12,7 +11,7 @@ void Vehicle::setPos(int X, int Y)
 	this->setLocation(); // Derived class implementation overrides this virtual function when called
 }
 
-vector<int> Vehicle::getPos()
+std::vector<int> Vehicle::getPos()
 {
 	return pos = { posX,posY };
 }

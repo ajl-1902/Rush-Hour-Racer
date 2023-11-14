@@ -5,7 +5,6 @@
 #include "Borders.h"
 #include "Traffic.h"
 #include "Windows.h"
-using namespace std;
 
 class Renderer
 {
@@ -16,8 +15,8 @@ private:
 	char prev_frame[ScreenSize][ScreenSize]; // Stores all characters in previous frame
 
 	Player player;
-	vector<Borders> borders;
-	vector<Traffic> traffic;
+	std::vector<Borders> borders;
+	std::vector<Traffic> traffic;
 
 	int model;
 	int difficulty;
@@ -36,6 +35,6 @@ public:
 	void NextFrame();
 
 	void LaneSwitch();
-	vector<int> getLanePos(int);
+	std::vector<int> getLanePos(int);
 	bool checkCollision();
 };

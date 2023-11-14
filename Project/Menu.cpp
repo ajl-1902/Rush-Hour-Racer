@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Menu.h"
-using namespace std;
 
 // Used to reduce visual clutter while verifying player input
 #define ChoiceCheck5 choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5
@@ -21,7 +20,7 @@ void Menu::BootSequence()
 {
 	// \n is used over endl wherever possible to prevent unnecessary flushing of output buffer - noticeably improves in-game performance
 	// Has negligible effect in menus, but is included to maintain a consistent format
-	cout << "Please maximize the window before continuing for the best experience\n\n";
+	std::cout << "Please maximize the window before continuing for the best experience\n\n";
 	system("pause");
 	system("cls");
 
@@ -30,17 +29,17 @@ void Menu::BootSequence()
 
 	cursor_pos = { (ScreenSize / 3) - 2, ScreenSize / 6 + 3 }; // Moves cursor to appropriate location to output text over logo graphics
 	SetConsoleCursorPosition(console, cursor_pos);
-	cout << "Rush\n";
+	std::cout << "Rush\n";
 	Sleep(750);
 
 	cursor_pos = { (ScreenSize / 2) - 2, ScreenSize / 4 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
-	cout << "Hour\n";
+	std::cout << "Hour\n";
 	Sleep(750);
 
 	cursor_pos = { (2 * ScreenSize / 3) - 2, 2 * ScreenSize / 6 + 3 };
 	SetConsoleCursorPosition(console, cursor_pos);
-	cout << "Racer\n";
+	std::cout << "Racer\n";
 	Sleep(3000);
 
 	this->MainMenu(); // Loads main menu
@@ -52,15 +51,15 @@ void Menu::MainMenu()
 	{
 		system("cls");
 		do {
-			cout << "Welcome to Rush Hour Racer!\n";
-			cout << "1. Play\n" << "2. Difficulty\n" << "3. Customization\n" << "4. How to Play\n" << "5. Exit\n";
+			std::cout << "Welcome to Rush Hour Racer!\n";
+			std::cout << "1. Play\n" << "2. Difficulty\n" << "3. Customization\n" << "4. How to Play\n" << "5. Exit\n";
 
-			cin >> choice;
+			std::cin >> choice;
 
 			if (ChoiceCheck5) // Ensures that player can not enter a numerical value outside of the defined range
 			{
 				system("cls");
-				cout << "Invalid selection. Enter a value from 1-5\n\n";
+				std::cout << "Invalid selection. Enter a value from 1-5\n\n";
 				Sleep(2000);
 			}
 		} while (ChoiceCheck5);
@@ -86,7 +85,7 @@ void Menu::MainMenu()
 		case 5:
 			exit = 1; // Exit condition for while loop is satisfied and program ends
 			system("cls");
-			cout << "Thanks for playing!\n";
+			std::cout << "Thanks for playing!\n";
 			Sleep(2000);
 			break;
 		}
@@ -111,8 +110,8 @@ void Menu::RunGame()
 
 	cursor_pos = { ScreenSize / 2 - 8,ScreenSize / 3 - 2 };
 	SetConsoleCursorPosition(console, cursor_pos);
-	cout << "Your score: " << score;
-	for (int i = 0; i < ScreenSize / 3 + 2; i++) { cout << "\n"; }
+	std::cout << "Your score: " << score;
+	for (int i = 0; i < ScreenSize / 3 + 2; i++) { std::cout << "\n"; }
 	system("pause");
 	
 	score = 0; // Resets score for subsequent attempts in same program execution
@@ -123,16 +122,16 @@ void Menu::DiffSettings()
 {
 	system("cls");
 	do {
-		cout << "The difficulty setting affects the speed and density of traffic. Select an option below:\n";
-		cout << "1. Easy\n" << "2. Normal\n" << "3. Hard\n" << "4. Insane\n";
+		std::cout << "The difficulty setting affects the speed and density of traffic. Select an option below:\n";
+		std::cout << "1. Easy\n" << "2. Normal\n" << "3. Hard\n" << "4. Insane\n";
 
-		cin >> choice;
+		std::cin >> choice;
 		difficulty = choice;
 
 		if (ChoiceCheck4)
 		{
 			system("cls");
-			cout << "Invalid selection. Enter a value from 1-4\n\n";
+			std::cout << "Invalid selection. Enter a value from 1-4\n\n";
 		}
 	} while (ChoiceCheck4);
 
@@ -143,16 +142,16 @@ void Menu::CustomizationSettings()
 {
 	system("cls");
 	do {
-		cout << "Customize the model for the player car. Note that car model is purely cosmetic and does not affect performance" << "\n";
-		cout << "1. Car\n" << "2. Monster Truck\n" << "3. Formula\n" << "4. Tank\n";
+		std::cout << "Customize the model for the player car. Note that car model is purely cosmetic and does not affect performance" << "\n";
+		std::cout << "1. Car\n" << "2. Monster Truck\n" << "3. Formula\n" << "4. Tank\n";
 
-		cin >> choice;
+		std::cin >> choice;
 		model = choice;
 
 		if (ChoiceCheck4)
 		{
 			system("cls");
-			cout << "Invalid selection. Enter a value from 1-4\n\n";
+			std::cout << "Invalid selection. Enter a value from 1-4\n\n";
 		}
 	} while (ChoiceCheck4);
 
@@ -162,7 +161,7 @@ void Menu::CustomizationSettings()
 void Menu::Instructions()
 {
 	system("cls");
-	cout << "The objective of the game is to weave through lanes of oncoming traffic and attempt to survive for as long as possible.\n"
+	std::cout << "The objective of the game is to weave through lanes of oncoming traffic and attempt to survive for as long as possible.\n"
 		<< "After beginning a new run, use the left and right arrow keys to move the player car between adjacent lanes.\n"
 		<< "You receive 10 points for every second you survive, and there is no finite win condition, so aim for the highest score!\n\n";
 	system("pause");

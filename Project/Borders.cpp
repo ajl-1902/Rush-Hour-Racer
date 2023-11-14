@@ -1,5 +1,4 @@
 #include "Borders.h"
-using namespace std;
 
 Borders::Borders(int X, int Y, char bdr) // Game window is made up of two different characters, so the object must be instantiated with the character it plans to use
 {

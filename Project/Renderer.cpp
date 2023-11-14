@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Renderer.h"
-using namespace std;
 
 Renderer::Renderer(int diff, int mdl)
 {
@@ -71,9 +70,9 @@ void Renderer::DisplayFrame() // Used to display very first frame when game star
 	{
 		for (int j = 0; j < ScreenSize; j++)
 		{
-			cout << curr_frame[i][j];
+			std::cout << curr_frame[i][j];
 		}
-		cout << "\n";
+		std::cout << "\n";
 	}
 
 	for (int i = 0; i < 5 * ScreenSize / 8; i++)
@@ -99,7 +98,7 @@ void Renderer::UpdateFrame() // Locates any changes that have occured since last
 				HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 				COORD cursor_pos = { j, i };
 				SetConsoleCursorPosition(hConsole, cursor_pos); // Moves cursor directly to location of changes
-				cout << curr_frame[i][j];
+				std::cout << curr_frame[i][j];
 			}
 		}
 	}
@@ -160,7 +159,7 @@ void Renderer::LaneSwitch() // Checks for user input since last frame and moves 
 	if (GetAsyncKeyState(VK_RIGHT) && curr_lane != 3) { curr_lane += 1; }
 }
 
-vector<int> Renderer::getLanePos(int curr_lane) // Returns (X,Y) vector corresponding to numbered lanes
+std::vector<int> Renderer::getLanePos(int curr_lane) // Returns (X,Y) vector corresponding to numbered lanes
 {
 	switch (curr_lane)
 	{

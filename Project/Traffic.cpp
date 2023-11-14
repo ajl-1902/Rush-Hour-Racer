@@ -1,6 +1,5 @@
 #include <vector>
 #include "Traffic.h"
-using namespace std;
 
 Traffic::Traffic(int diff)  // Used to spawn the intial traffic entity
 {

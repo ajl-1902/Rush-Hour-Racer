@@ -1,18 +1,17 @@
 #pragma once
 #include <vector>
-using namespace std;
 
 class Vehicle
 {
 private:
 	int posX, posY, vel;
-	vector<int> pos; // Stores posX and posY in a single container for easier management
+	std::vector<int> pos; // Stores posX and posY in a single container for easier management
 
 public:
 	Vehicle();
 
 	void setPos(int, int);
-	vector<int> getPos();
+	std::vector<int> getPos();
 	void setVel(int);
 	int getVel();
 
