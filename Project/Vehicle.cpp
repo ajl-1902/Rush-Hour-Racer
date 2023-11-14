@@ -1,7 +1,7 @@
 #include "Vehicle.h"
 using namespace std;
 
-Vehicle::Vehicle()
+Vehicle::Vehicle() // Sets default motion variables to zero
 {
 	posX = 0; posY = 0; vel = 0;
 }
@@ -9,7 +9,7 @@ Vehicle::Vehicle()
 void Vehicle::setPos(int X, int Y)
 {
 	posX = X; posY = Y;
-	this->setLocation();
+	this->setLocation(); // Derived class implementation overrides this virtual function when called
 }
 
 vector<int> Vehicle::getPos()
@@ -27,6 +27,7 @@ int Vehicle::getVel()
 	return vel;
 }
 
+// Checks to see if there has been a change at the specified location and updates character, otherwise returns the same input
 char Vehicle::getShapeDelta(int X, int Y, char curr_frame)
 {
 	if (this->isHere(X, Y))

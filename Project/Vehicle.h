@@ -6,7 +6,7 @@ class Vehicle
 {
 private:
 	int posX, posY, vel;
-	vector<int> pos;
+	vector<int> pos; // Stores posX and posY in a single container for easier management
 
 public:
 	Vehicle();
@@ -18,6 +18,7 @@ public:
 
 	char getShapeDelta(int, int, char);
 
+	// Virtual functions that are uniquely defined/overwritten in the derived classes
 	virtual void setShape(int) = 0;
 	virtual char getShape(int, int) = 0;
 	virtual void setLocation() = 0;

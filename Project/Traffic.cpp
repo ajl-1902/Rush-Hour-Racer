@@ -2,30 +2,30 @@
 #include "Traffic.h"
 using namespace std;
 
-Traffic::Traffic(int diff) 
+Traffic::Traffic(int diff)  // Used to spawn the intial traffic entity
 {
 	srand(time(NULL));
 	count = 0;
 
-	this->setPos(1, 28);
+	this->setPos(1, 28); // Center lane
 	this->setVel(diff);
 
 	this->setShape(1);
 	this->setLocation();
 }
 
-Traffic::Traffic(int diff, int prev_lane)
+Traffic::Traffic(int diff, int prev_lane) // Used to spawn all subsequent traffic
 {
 	this->setVel(diff);
 
-	traffic_lane = (rand() % 3 + 1);
+	traffic_lane = (rand() % 3 + 1); // Randomizes lane of each car that spawns after the first
 
 	while (traffic_lane == prev_lane) // Prevents spawning of long single-lane chains
 	{
 		traffic_lane = (rand() % 3 + 1);
 	}
 
-	switch (traffic_lane)
+	switch (traffic_lane) // Sets the intial position corresponding to the given lane
 	{
 	case 1:
 		this->setPos(1, 5);
@@ -44,7 +44,7 @@ Traffic::Traffic(int diff, int prev_lane)
 	this->setLocation();
 }
 
-void Traffic::setShape(int mdl)
+void Traffic::setShape(int mdl) // Defines character array for current object (mdl not used - only to satisfy virtual function in base class)
 {
 	for (int i = 0; i < traffic_sizeX; i++)
 	{
@@ -65,19 +65,21 @@ void Traffic::setShape(int mdl)
 										cell[8][3] = '|'; cell[8][4] = '_'; cell[8][5] = '_'; cell[8][6] = '_'; cell[8][7] = '_';	cell[8][8] = '_'; cell[8][9] = '_';	cell[8][10] = '_'; cell[8][11] = '|';
 }
 
-char Traffic::getShape(int X, int Y)
+char Traffic::getShape(int X, int Y) // Retrieves character at a certain (X,Y) location
 {
 	for (int i = 0; i < traffic_sizeX; i++)
 	{
 		for (int j = 0; j < traffic_sizeY; j++)
 		{
 			if (cell_pos[i][j][0] == X && cell_pos[i][j][1] == Y)
+			{
 				return cell[i][j];
+			}
 		}
 	}
 }
 
-void Traffic::setLocation()
+void Traffic::setLocation() // Defines the locations of each character in the game window plane
 {
 	for (int i = 0; i < traffic_sizeX; i++)
 	{
@@ -89,7 +91,7 @@ void Traffic::setLocation()
 	}
 }
 
-bool Traffic::isHere(int X, int Y)
+bool Traffic::isHere(int X, int Y) // Checks is a traffic character is present at the specified location
 {
 	for (int i = 0; i < traffic_sizeX; i++)
 	{
