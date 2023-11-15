@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(Rush Hour Racer)
+project(Rush-Hour-Racer)
 
 set(EXECUTABLE_NAME "${PROJECT_NAME}")
 
