@@ -22,6 +22,10 @@ The use of Visual Studio is recommended, but an option for building with CMake i
 
 2. Create a `build` directory and move into it.
 
+```
+mkdir build && cd build
+```
+
 3. Run `cmake` to generate the necessary project files.
 
 ```
