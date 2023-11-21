@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "Menu.h"
 
 // Used to reduce visual clutter while verifying player input
@@ -112,6 +113,14 @@ void Menu::RunGame()
 	SetConsoleCursorPosition(console, cursor_pos);
 	std::cout << "Your score: " << score;
 	for (int i = 0; i < ScreenSize / 3 + 2; i++) { std::cout << "\n"; }
+
+	std::ofstream Save_Score;
+	Save_Score.open("Project/Score-History.txt", std::ios::app); // Opens file for appending, rather than overwriting contents after each attempt
+	if (!Save_Score.fail())
+	{
+		Save_Score << "Difficulty: " << difficulty << "\t" << "Score: " << score << "\n"; // Writes score and selected difficulty to text file
+	}
+	Save_Score.close();
 	system("pause");
 	
 	score = 0; // Resets score for subsequent attempts in same program execution

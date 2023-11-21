@@ -22,7 +22,7 @@ private:
 	int difficulty;
 	int curr_lane;
 	int traffic_lane;
-	int delay_factor;
+	int delay_factor = 20;
 
 	unsigned int frame_index; // Counts frames that have passed since game began
 
