@@ -115,7 +115,7 @@ void Menu::RunGame()
 	for (int i = 0; i < ScreenSize / 3 + 2; i++) { std::cout << "\n"; }
 
 	std::ofstream Save_Score;
-	Save_Score.open("Project/Score-History.txt", std::ios::app); // Opens file for appending, rather than overwriting contents after each attempt
+	Save_Score.open("Score-History.txt", std::ios::app); // Opens file for appending, rather than overwriting contents after each attempt
 	if (!Save_Score.fail())
 	{
 		Save_Score << "Difficulty: " << difficulty << "\t" << "Score: " << score << "\n"; // Writes score and selected difficulty to text file

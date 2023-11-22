@@ -1,7 +1,7 @@
 # Rush-Hour-Racer
 
 ## About
-Rush Hour Racer is a top-down endless runner game, in which the player takes control of a car as it weaves around and between traffic.
+Rush Hour Racer is a top-down endless runner game, in which the player takes control of a car as it weaves through and around traffic.
 * Adjustable Difficulty - Enjoy a more relaxed experience with easy mode, or simulate an average Chicago commute with Insane mode!
 * Player Customization - Choose from up to four unique player models, featuring classic daily drivers like a monster truck and a decommissioned M1 Abrams MBT!
 * No Limits - With no finite win condition, the only goal is to survive as long as possible and aim for the highest score!
